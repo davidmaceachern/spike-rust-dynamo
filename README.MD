@@ -56,6 +56,17 @@ Using Localstack we can choose what we have enabled by removing it from the dock
 
 Next we can rerun the container with `npm run cdklocal:start`.
 
-We probably want understand how to test our components, we can do so with an invocation of our REST API endpoints using a Rust Test Client.
+So enabling services in the localstack Docker image is like AWS making a service available or unavailable.
+
+This means that we still need to tell AWS we want to spin up an instance of a service, we can do this using something like Terraform, or the AWS CDK which is like Pulumi but only for AWS.
+
+> sidenote: sometimes when running Terraform against AWS to deploy and delete different types of resources we run into a rate limiting error, or find it's not possible to perform an action for a specific type of resource. Might be interesting to bear this in mind because we could replicate this whilst we use localstack in the future. Though this might be broaching the contentious topic of writing tests for our infrastructure.
+
+TODO Add apigw 
+
+Next we want to add our instance of API Gateway to our deployment. In this template our deployment is located in the deployment folder `./deployment/`.  
+
+We probably want to understand how to test our components, we can do so with an invocation of our REST API endpoints using a Rust Test Client.
+
 
 TODO CHOOSE TEST CLIENT
