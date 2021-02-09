@@ -68,5 +68,14 @@ Next we want to add our instance of API Gateway to our deployment. In this templ
 
 We probably want to understand how to test our components, we can do so with an invocation of our REST API endpoints using a Rust Test Client.
 
+This means that once we have deployed our application to our localstack AWS we can send a request like a user would and the request would be routed in the following way: hosted zone (ourdomain.com/api/v1/...) -> apigateway in proxy mode -> lambda proxy. The goal is to write a REST API like we normally would but for it to be built and deployed to Lambda and API Gateway only forwards the traffic. This means we theoretically we can write using a framework such as Rocket and not have to worry about the niggly implementation details around APIGW.
 
-TODO CHOOSE TEST CLIENT
+## Getting going with the API
+
+To make things easier for now we can run dynamodb locally and develop our API against that, then later try to combine it with the custom lambda runtime in the Rust minimal example.
+
+``` bash
+docker run -p 8000:8000 amazon/dynamodb-local
+```
+
+
