@@ -6,6 +6,8 @@ If we want to include infrastructure that is elsewhere on the web then we could 
 
 For the purposes of this exercise however we will use the AWS CDK, moreover the example provided by Codetalkio that utilizes the Netlify Rust runtime.
 
+> WARNING: Deploying this way has not yet been validated, there is work that might enable this ongoing [here](https://github.com/GREsau/rocket-lamb/issues/3). This blog post will focus on addressing a specification, and we will revisit incorporating the CDK later on.
+
 ## Running the template
 
 First we can clone the repository.
